@@ -1,0 +1,52 @@
+{
+    "data": [
+        {
+            "@context": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+            "id": "urn:uuid:a2f41f9c-d57d-4400-b3fe-716b9026334e",
+            "type": "ForumEvent",
+            "actor": {
+              "id": "https://example.edu/users/554433",
+              "type": "Person"
+            },
+            "action": "Subscribed",
+            "object": {
+              "id": "https://example.edu/terms/201801/courses/7/sections/1/forums/1",
+              "type": "Forum",
+              "name": "Caliper Forum",
+              "isPartOf": {
+                "id": "https://example.edu/terms/201801/courses/7/sections/1",
+                "type": "CourseSection"
+              },
+              "dateCreated": "2018-09-14T11:00:00.000Z"
+            },
+            "eventTime": "2018-11-15T10:16:00.000Z",
+            "edApp": {
+              "id": "https://example.edu/forums",
+              "type": "SoftwareApplication",
+              "version": "v2"
+            },
+            "group": {
+              "id": "https://example.edu/terms/201801/courses/7/sections/1",
+              "type": "CourseSection",
+              "courseNumber": "CPS 435-01",
+              "academicSession": "Fall 2018"
+            },
+            "membership": {
+              "id": "https://example.edu/terms/201801/courses/7/sections/1/rosters/1",
+              "type": "Membership",
+              "member": "https://example.edu/users/554433",
+              "organization": "https://example.edu/terms/201801/courses/7/sections/1",
+              "roles": [ "Learner" ],
+              "status": "Active",
+              "dateCreated": "2018-08-01T06:00:00.000Z"
+            },
+            "session": {
+              "id": "https://example.edu/sessions/1f6442a482de72ea6ad134943812bff564a76259",
+              "type": "Session",
+              "startedAtTime": "2018-11-15T10:00:00.000Z"
+            }
+          }
+    ],
+    "sensor": "string",
+    "sendTime": "2016-11-15T10:00:00.000Z"
+}        

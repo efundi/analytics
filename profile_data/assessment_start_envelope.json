@@ -1,0 +1,62 @@
+{
+    "data": [
+        {
+            "@context": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+            "id": "urn:uuid:27734504-068d-4596-861c-2315be33a2a2",
+            "type": "AssessmentEvent",
+            "actor": {
+                "id": "https://example.edu/users/554433",
+                "type": "Person"
+            },
+            "action": "Started",
+            "object": {
+                "id": "https://example.edu/terms/201801/courses/7/sections/1/assess/1",
+                "type": "Assessment",
+                "name": "Quiz One",
+                "dateToStartOn": "2018-11-14T05:00:00.000Z",
+                "dateToSubmit": "2018-11-18T11:59:59.000Z",
+                "maxAttempts": 2,
+                "maxSubmits": 2,
+                "maxScore": 25.0,
+                "version": "1.0"
+            },
+            "generated": {
+                "id": "https://example.edu/terms/201801/courses/7/sections/1/assess/1/users/554433/attempts/1",
+                "type": "Attempt",
+                "assignee": "https://example.edu/users/554433",
+                "assignable": "https://example.edu/terms/201801/courses/7/sections/1/assess/1",
+                "count": 1,
+                "dateCreated": "2018-11-15T10:15:00.000Z",
+                "startedAtTime": "2018-11-15T10:15:00.000Z"
+            },
+            "eventTime": "2018-11-15T10:15:00.000Z",
+            "edApp": {
+                "id": "https://example.edu",
+                "type": "SoftwareApplication",
+                "version": "v2"
+            },
+            "group": {
+                "id": "https://example.edu/terms/201801/courses/7/sections/1",
+                "type": "CourseSection",
+                "courseNumber": "CPS 435-01",
+                "academicSession": "Fall 2018"
+            },
+            "membership": {
+                "id": "https://example.edu/terms/201801/courses/7/sections/1/rosters/1",
+                "type": "Membership",
+                "member": "https://example.edu/users/554433",
+                "organization": "https://example.edu/terms/201801/courses/7/sections/1",
+                "roles": [ "Learner" ],
+                "status": "Active",
+                "dateCreated": "2018-08-01T06:00:00.000Z"
+            },
+            "session": {
+                "id": "https://example.edu/sessions/1f6442a482de72ea6ad134943812bff564a76259",
+                "type": "Session",
+                "startedAtTime": "2018-11-15T10:00:00.000Z"
+            }
+        }
+    ],
+    "sensor": "string",
+    "sendTime": "2016-11-15T10:00:00.000Z"
+}        

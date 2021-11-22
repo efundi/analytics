@@ -1,0 +1,80 @@
+{
+    "data": [
+        {
+            "@context": "http://purl.imsglobal.org/ctx/caliper/v1p2",
+            "id": "urn:uuid:ff9ec22a-fc59-4ae1-ae8d-2c9463ee2f8f",
+            "type": "NavigationEvent",
+            "profile": "MediaProfile",
+            "actor": {
+            "id": "https://analytics.opencollab.co.za/users/554433",
+            "type": "Person"
+            },
+            "action": "NavigatedTo",
+            "object": {
+            "id": "https://analytics.opencollab.co.za/terms/201601/courses/7/sections/1/resources/2",
+            "type": "DigitalResourceCollection",
+            "name": "Video Collection",
+            "keywords": ["collection", "videos"],
+            "dateCreated": "2016-08-01T06:00:00.000Z",
+            "dateModified": "2016-09-02T11:30:00.000Z"
+            },
+            "eventTime": "2016-11-15T10:15:00.000Z",
+            "referrer": {
+            "id": "https://analytics.opencollab.co.za/videos/1225",
+            "type": "VideoObject",
+            "mediaType": "video/ogg",
+            "name": "Introduction to IMS Caliper",
+            "storageName": "caliper-intro.ogg",
+            "dateCreated": "2016-08-01T06:00:00.000Z",
+            "duration": "PT1H12M27S",
+            "version": "1"
+            },
+            "target": {
+            "id": "https://analytics.opencollab.co.za/videos/5629",
+            "type": "VideoObject",
+            "mediaType": "video/ogg",
+            "name": "IMS Caliper Activity Profiles",
+            "storageName": "caliper-activity-profiles.ogg",
+            "dateCreated": "2016-08-01T06:00:00.000Z",
+            "duration": "PT55M13S",
+            "version": "1"
+            },
+            "edApp": {
+                "@context": "string",
+                "@id": "string",
+                "@type": "string",
+                "dateCreated": "2021-10-12T14:46:32.897Z",
+                "dateModified": "2021-10-12T14:46:32.897Z",
+                "description": "string",
+                "extensions": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "name": "string"
+            },
+            "group": {
+            "id": "https://analytics.opencollab.co.za/terms/201601/courses/7/sections/1",
+            "type": "CourseSection",
+            "courseNumber": "CPS 435-01",
+            "academicSession": "Fall 2016"
+            },
+            "membership": {
+            "id": "https://analytics.opencollab.co.za/terms/201601/courses/7/sections/1/rosters/1",
+            "type": "Membership",
+            "member": "https://analytics.opencollab.co.za/users/554433",
+            "organization": "https://analytics.opencollab.co.za/terms/201601/courses/7/sections/1",
+            "roles": [ "Learner" ],
+            "status": "Active",
+            "dateCreated": "2016-08-01T06:00:00.000Z"
+            },
+            "session": {
+            "id": "https://analytics.opencollab.co.za/sessions/1f6442a482de72ea6ad134943812bff564a76259",
+            "type": "Session",
+            "startedAtTime": "2016-11-15T10:00:00.000Z"
+            }
+        }
+    ],
+    "sensor": "string",
+    "sendTime": "2016-11-15T10:00:00.000Z"
+}

@@ -1,0 +1,284 @@
+{
+    "data": [
+        {
+            "@context": "string",
+            "@type": "string",
+            "action": "string",
+            "actor": {
+                "@context": "string",
+                "@id": "string",
+                "@type": "string",
+                "dateCreated": "2021-10-12T14:46:32.897Z",
+                "dateModified": "2021-10-12T14:46:32.897Z",
+                "description": "string",
+                "extensions": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "name": "string"
+            },
+            "edApp": {
+                "@context": "string",
+                "@id": "string",
+                "@type": "string",
+                "dateCreated": "2021-10-12T14:46:32.897Z",
+                "dateModified": "2021-10-12T14:46:32.897Z",
+                "description": "string",
+                "extensions": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "name": "string"
+            },
+            "eventTime": "2021-10-12T14:46:32.898Z",
+            "federatedSession": "string",
+            "generated": {
+                "@context": "string",
+                "@id": "string",
+                "@type": "string",
+                "actor": "string",
+                "alignedLearningObjective": [
+                    {
+                        "@context": "string",
+                        "@id": "string",
+                        "@type": "string",
+                        "dateCreated": "2021-10-12T14:46:32.898Z",
+                        "dateModified": "2021-10-12T14:46:32.898Z",
+                        "description": "string",
+                        "extensions": {
+                            "additionalProp1": "string",
+                            "additionalProp2": "string",
+                            "additionalProp3": "string"
+                        },
+                        "name": "string"
+                    }
+                ],
+                "assignable": "string",
+                "comment": "string",
+                "currentTime": "string",
+                "curveFactor": "string",
+                "curvedTotalScore": 0,
+                "dateCreated": "2021-10-12T14:46:32.898Z",
+                "dateModified": "2021-10-12T14:46:32.898Z",
+                "datePublished": "2021-10-12T14:46:32.898Z",
+                "description": "string",
+                "duration": "string",
+                "extensions": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "extraCreditScore": 0,
+                "keywords": [
+                    "string"
+                ],
+                "name": "string",
+                "normalScore": 0,
+                "objectType": [
+                    "string"
+                ],
+                "penaltyScore": 0,
+                "scoredBy": {
+                    "@context": "string",
+                    "@id": "string",
+                    "@type": "string",
+                    "dateCreated": "2021-10-12T14:46:32.898Z",
+                    "dateModified": "2021-10-12T14:46:32.898Z",
+                    "description": "string",
+                    "extensions": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "name": "string"
+                },
+                "totalScore": 0,
+                "version": "string"
+            },
+            "group": {
+                "@context": "string",
+                "@id": "string",
+                "@type": "string",
+                "courseNumber": "string",
+                "dateCreated": "2021-10-12T14:46:32.898Z",
+                "dateModified": "2021-10-12T14:46:32.898Z",
+                "description": "string",
+                "extensions": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "name": "string",
+                "subOrganizationOf": {
+                    "@context": "string",
+                    "@id": "string",
+                    "@type": "string",
+                    "academicSession": "string",
+                    "category": "string",
+                    "courseNumber": "string",
+                    "dateCreated": "2021-10-12T14:46:32.898Z",
+                    "dateModified": "2021-10-12T14:46:32.898Z",
+                    "description": "string",
+                    "extensions": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "name": "string"
+                }
+            },
+            "id": "string",
+            "membership": {
+                "@context": "string",
+                "@id": "string",
+                "@type": "string",
+                "dateCreated": "2021-10-12T14:46:32.898Z",
+                "dateModified": "2021-10-12T14:46:32.898Z",
+                "description": "string",
+                "extensions": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "member": "string",
+                "name": "string",
+                "organization": "string",
+                "roles": [
+                    "string"
+                ],
+                "status": "string"
+            },
+            "object": {
+                "@context": "string",
+                "@id": "string",
+                "@type": "string",
+                "actor": "string",
+                "alignedLearningObjective": [
+                    {
+                        "@context": "string",
+                        "@id": "string",
+                        "@type": "string",
+                        "dateCreated": "2021-10-12T14:46:32.898Z",
+                        "dateModified": "2021-10-12T14:46:32.898Z",
+                        "description": "string",
+                        "extensions": {
+                            "additionalProp1": "string",
+                            "additionalProp2": "string",
+                            "additionalProp3": "string"
+                        },
+                        "name": "string"
+                    }
+                ],
+                "assignable": "string",
+                "comment": "string",
+                "currentTime": "string",
+                "curveFactor": "string",
+                "curvedTotalScore": 0,
+                "dateCreated": "2021-10-12T14:46:32.898Z",
+                "dateModified": "2021-10-12T14:46:32.898Z",
+                "datePublished": "2021-10-12T14:46:32.898Z",
+                "description": "string",
+                "duration": "string",
+                "extensions": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "extraCreditScore": 0,
+                "keywords": [
+                    "string"
+                ],
+                "name": "string",
+                "normalScore": 0,
+                "objectType": [
+                    "string"
+                ],
+                "penaltyScore": 0,
+                "scoredBy": {
+                    "@context": "string",
+                    "@id": "string",
+                    "@type": "string",
+                    "dateCreated": "2021-10-12T14:46:32.898Z",
+                    "dateModified": "2021-10-12T14:46:32.898Z",
+                    "description": "string",
+                    "extensions": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "name": "string"
+                },
+                "totalScore": 0,
+                "version": "string"
+            },
+            "target": {
+                "@context": "string",
+                "@id": "string",
+                "@type": "string",
+                "actor": "string",
+                "alignedLearningObjective": [
+                    {
+                        "@context": "string",
+                        "@id": "string",
+                        "@type": "string",
+                        "dateCreated": "2021-10-12T14:46:32.898Z",
+                        "dateModified": "2021-10-12T14:46:32.898Z",
+                        "description": "string",
+                        "extensions": {
+                            "additionalProp1": "string",
+                            "additionalProp2": "string",
+                            "additionalProp3": "string"
+                        },
+                        "name": "string"
+                    }
+                ],
+                "assignable": "string",
+                "comment": "string",
+                "currentTime": "string",
+                "curveFactor": "string",
+                "curvedTotalScore": 0,
+                "dateCreated": "2021-10-12T14:46:32.898Z",
+                "dateModified": "2021-10-12T14:46:32.898Z",
+                "datePublished": "2021-10-12T14:46:32.898Z",
+                "description": "string",
+                "duration": "string",
+                "extensions": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "extraCreditScore": 0,
+                "keywords": [
+                    "string"
+                ],
+                "name": "string",
+                "normalScore": 0,
+                "objectType": [
+                    "string"
+                ],
+                "penaltyScore": 0,
+                "scoredBy": {
+                    "@context": "string",
+                    "@id": "string",
+                    "@type": "string",
+                    "dateCreated": "2021-10-12T14:46:32.898Z",
+                    "dateModified": "2021-10-12T14:46:32.898Z",
+                    "description": "string",
+                    "extensions": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "name": "string"
+                },
+                "totalScore": 0,
+                "version": "string"
+            },
+            "timeZoneOffset": 0
+        }
+    ],
+    "sendTime": "2021-10-12T14:46:32.898Z",
+    "sensor": "string"
+}
