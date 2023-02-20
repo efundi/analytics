@@ -64,7 +64,8 @@ password = os.environ.get("open_lrw_password")
 
 cprt("header", "Starting Application." )
 cprt("okblue", "Setting up openLRW Integration." )
-openlrw = OpenLRW( "http://143.160.210.115:9966", "3c3aec1c-1a5b-490c-b3c9-89004c19fc32" , "0757caf0-9b2e-4abc-a0e2-b8ea86f3e6c4" ) # Create an instance of the client
+# openlrw = OpenLRW( "http://143.160.210.115:9966", "3c3aec1c-1a5b-490c-b3c9-89004c19fc32" , "0757caf0-9b2e-4abc-a0e2-b8ea86f3e6c4" ) # Create an instance of the client
+openlrw = OpenLRW( "http://159.69.42.76:9966",username , password ) # Create an instance of the client
 #openlrw.setup_email('http://143.160.210.115', 'francois@opencollab.co.za', 'francois@opencollab.co.za')  # Optional: Allows you to send emails
 # print(openlrw)
 cprt("okblue", "Generating JWT" )

@@ -14,22 +14,37 @@ apt-get install python-dev libmysqlclient-dev
 pip install -r requirements.txt
 """
 
+# db_server = {
+# 		"db_server_name": "Sakai Production DB Server",
+# 		"db_name": "sakai", 
+# 		"db_user": "sakaiuser", 
+# 		"db_password": "[mokai@cc3ss]", 
+# 		"db_host": "127.0.0.1",
+# 		"db_port": 3306,
+# 		"ssh_tunnel": True,
+# 		"ssh_details":{ 
+# 			"ssh_host": "167.235.30.92",
+# 			"ssh_port": 22,
+# 			"ssh_user": "dev",
+# 			"ssh_password": "fbszx37v27Vx2ZjC",
+# 		}
+# 	}
+
 db_server = {
 		"db_server_name": "Sakai Production DB Server",
-		"db_name": "sakai_10_1", 
+		"db_name": "sakai", 
 		"db_user": "sakaiuser", 
-		"db_password": "S@kaiP@ssw0rd", 
+		"db_password": "ube+RqMXRVL3Nfks", 
 		"db_host": "127.0.0.1",
 		"db_port": 3306,
 		"ssh_tunnel": True,
 		"ssh_details":{ 
-			"ssh_host": "195.201.139.96",
+			"ssh_host": "159.69.42.76",
 			"ssh_port": 22,
 			"ssh_user": "dev",
-			"ssh_password": "q76Ren3Gvmmx9uKu",
+			"ssh_password": "AqMmhd5UUscGdmsQ",
 		}
 	}
-
 
 def process_sakai_queries():
 	tunnel = db_server["ssh_details"]

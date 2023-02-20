@@ -13,24 +13,31 @@ from rich import print, inspect
 from rich.console import Console
 from rich.table import Table
 from rich.progress import track
-console = Console()
+from dotenv import load_dotenv
 
+load_dotenv()
+
+console = Console()
+username = os.environ.get("open_lrw_username")
+password = os.environ.get("open_lrw_password")
+target_sakai_url = os.environ.get("target_sakai_url")
+target_sakai_version = os.environ.get("target_sakai_version")
 """
 Retrieve information from Sakai
 """
-# yesterday = datetime.datetime.today() - timedelta(days=1)
-yesterday = datetime.datetime.today()
+yesterday = datetime.datetime.today() - timedelta(days=1)
+# yesterday = datetime.datetime.today()
 yesterday_start_date = yesterday.strftime('%Y-%m-%d') + " 00:00:00"
 yesterday_end_date = yesterday.strftime('%Y-%m-%d') + " 23:59:59"
 context_1 = "http://purl.imsglobal.org/ctx/caliper/v1p1"
 context_2 = "http://purl.imsglobal.org/ctx/caliper/v1p2"
-target_system = "https://sakai.opencollab.co.za"
+target_system = "https://%s" % ( target_sakai_url )
 target_type = "LearnManagementSystem"
-target_version = "v21.1"
+target_version = "v%s" % (target_sakai_version)
 edApp = { 
-	"id": "https://sakai.opencollab.co.za",
+	"id": target_system,
     "type": "LearnManagementSystem",
-    "version": "v21.1"}
+    "version": target_version}
 # Move to a central class
 actor = {"id" : "", "type": ENTITY_TYPES["PERSON"] }	
 
