@@ -68,10 +68,26 @@ open_lrw_username = os.environ.get("TARGET_USERNAME")
 open_lrw_password = os.environ.get("TARGET_PASSWORD")
 logfile = os.environ.get("LOG_LOCATION")
 
-yesterday = datetime.datetime.today() - timedelta(days=1)
-# yesterday = datetime.datetime.today()
+# yesterday = datetime.datetime.today() - timedelta(days=1)
+yesterday = datetime.datetime.today()
 yesterday_start_date = yesterday.strftime('%Y-%m-%d') + " 00:00:00"
 yesterday_end_date = yesterday.strftime('%Y-%m-%d') + " 23:59:59"
+
+
+def get_tennants():
+  #@curl -X GET "http://143.160.210.115:9966/api/tenants" -H "accept: */*"
+  #response = requests.get('http://143.160.210.115:9966/api/tenants', headers={'Authorization': 'token {}'.format(jwt)})
+  response = requests.get('http://%s/api/tenants' % (open_lrw_uri), headers={'Authorization': 'Bearer {}'.format(jwt)})
+  # headers = {'X-Requested-With': 'XMLHttpRequest'}
+  # data = {"username": username , "password": password}
+  # print('{}'.format(jwt))
+  # data = {"token": '{}'.format(jwt) }
+  try:
+  #   response = requests.get("http://143.160.210.115:9966/api/tenants", headers=headers, json=data)
+    print(response.content)  
+  except:
+    response = ""
+    print("Failed !")
 
 if __name__ == "__main__":
 	cprt("header", "Displaying TEST DATA")
@@ -84,7 +100,7 @@ if __name__ == "__main__":
 	sakai_session_events_query = """
 		SELECT count(*)
 		FROM sakai_event se 
- 		WHERE se.event_date between '{0}' AND '{1}' ;
+		WHERE se.event_date between '{0}' AND '{1}' ;
 	"""
 	cur = db.cursor(MySQLdb.cursors.DictCursor)
 	print(sakai_session_events_query.format(yesterday_start_date, yesterday_end_date  ))
@@ -96,12 +112,12 @@ if __name__ == "__main__":
 
 	cprt("header", "Starting Application." )
 	cprt("okblue", "Setting up openLRW Integration." )
-	# openlrw = OpenLRW( "http://143.160.210.115:9966", "3c3aec1c-1a5b-490c-b3c9-89004c19fc32" , "0757caf0-9b2e-4abc-a0e2-b8ea86f3e6c4" ) # Create an instance of the client
 	openlrw = OpenLRW( "http://%s" % (open_lrw_uri),open_lrw_username , open_lrw_password ) # Create an instance of the client
-	#openlrw.setup_email('http://143.160.210.115', 'francois@opencollab.co.za', 'francois@opencollab.co.za')  # Optional: Allows you to send emails
-	# print(openlrw)
+	print(openlrw)
 	cprt("okblue", "Generating JWT" )
 	try:
-  		jwt = openlrw.generate_jwt()
+		jwt = openlrw.generate_jwt()
 	except  Exception as inst:
-  		cprt("fail", "Could not generate token. Check if server is running.")
+		cprt("fail", "Could not generate token. Check if server is running.")
+		print(inst)
+	get_tennants()
