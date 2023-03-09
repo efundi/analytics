@@ -2,6 +2,7 @@
  
 ## Instructions to install required OS packages:
 <code>
+
 sudo yum -y update
 
 sudo yum install -y epel-release
@@ -19,6 +20,7 @@ sudo yum install -y python36
 
 ## CentOS 7 pip and other packages installation
 <code>
+
 sudo yum install -y openssl-devel
 
 sudo yum install libffi-devel
