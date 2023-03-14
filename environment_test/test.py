@@ -68,8 +68,8 @@ open_lrw_username = os.environ.get("TARGET_USERNAME")
 open_lrw_password = os.environ.get("TARGET_PASSWORD")
 logfile = os.environ.get("LOG_LOCATION")
 
-# yesterday = datetime.datetime.today() - timedelta(days=1)
-yesterday = datetime.datetime.today()
+yesterday = datetime.datetime.today() - timedelta(days=1000)
+# yesterday = datetime.datetime.today()
 yesterday_start_date = yesterday.strftime('%Y-%m-%d') + " 00:00:00"
 yesterday_end_date = yesterday.strftime('%Y-%m-%d') + " 23:59:59"
 
