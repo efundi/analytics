@@ -11,6 +11,7 @@ from openlrw.exceptions import *
 # from caliper.constants import *
 # from mysql_db_connector import *
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
 
@@ -74,20 +75,20 @@ yesterday_start_date = yesterday.strftime('%Y-%m-%d') + " 00:00:00"
 yesterday_end_date = yesterday.strftime('%Y-%m-%d') + " 23:59:59"
 
 
+proxy_servers = {
+   'http': proxy_url,
+   'https': proxy_url,
+}
+
 def get_tennants():
-  #@curl -X GET "http://143.160.210.115:9966/api/tenants" -H "accept: */*"
-  #response = requests.get('http://143.160.210.115:9966/api/tenants', headers={'Authorization': 'token {}'.format(jwt)})
-  response = requests.get('http://%s/api/tenants' % (open_lrw_uri), headers={'Authorization': 'Bearer {}'.format(jwt)})
-  # headers = {'X-Requested-With': 'XMLHttpRequest'}
-  # data = {"username": username , "password": password}
-  # print('{}'.format(jwt))
-  # data = {"token": '{}'.format(jwt) }
+  response = requests.get('http://%s/api/tenants' % (open_lrw_uri), headers={'Authorization': 'Bearer {}'.format(jwt)}, proxies=proxy_servers )
   try:
-  #   response = requests.get("http://143.160.210.115:9966/api/tenants", headers=headers, json=data)
     print(response.content)  
+    logging.info(response.content)
   except:
     response = ""
     print("Failed !")
+    logging.error('Failed to connect to %s' % (open_lrw_uri))
 
 if __name__ == "__main__":
 	cprt("header", "Displaying TEST DATA")
