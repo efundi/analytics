@@ -69,9 +69,9 @@ open_lrw_password = os.environ.get("TARGET_PASSWORD")
 logfile = os.environ.get("LOG_LOCATION")
 
 yesterday = datetime.datetime.today() - timedelta(days=1000)
-# yesterday = datetime.datetime.today()
+today = datetime.datetime.today()
 yesterday_start_date = yesterday.strftime('%Y-%m-%d') + " 00:00:00"
-yesterday_end_date = yesterday.strftime('%Y-%m-%d') + " 23:59:59"
+yesterday_end_date = today.strftime('%Y-%m-%d') + " 23:59:59"
 
 
 proxy_servers = {
