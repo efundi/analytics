@@ -11,7 +11,6 @@ from openlrw.exceptions import *
 # from caliper.constants import *
 # from mysql_db_connector import *
 from dotenv import load_dotenv
-import logging
 
 load_dotenv()
 
@@ -84,11 +83,9 @@ def get_tennants():
   response = requests.get('http://%s/api/tenants' % (open_lrw_uri), headers={'Authorization': 'Bearer {}'.format(jwt)}, proxies=proxy_servers )
   try:
     print(response.content)  
-    logging.info(response.content)
   except:
     response = ""
     print("Failed !")
-    logging.error('Failed to connect to %s' % (open_lrw_uri))
 
 if __name__ == "__main__":
 	cprt("header", "Displaying TEST DATA")
