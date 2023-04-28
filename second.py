@@ -440,8 +440,8 @@ def create_session_events(data_packet):
     openlrw.send_caliper(data_packet)
     cprt("okgreen", "Great Success")
   except BadRequestException as e:
-    print(str(e.message))
-    print("An Error")
+    print(str(e))
+    print("An Error Occurred")
     # openlrw.pretty_error("Bad Request", "An error happened.")
   except InternalServerErrorException as f:
     print(str(f.message)) 
