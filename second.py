@@ -60,8 +60,10 @@ def cprt(style, txt):
 		print(bcolors.UNDERLINE + txt+ bcolors.ENDC)	
 
 #.env credentials
-username = os.environ.get("open_lrw_username")
-password = os.environ.get("open_lrw_password")
+# username = os.environ.get("open_lrw_username")
+# password = os.environ.get("open_lrw_password")
+username = os.environ.get("TARGET_USERNAME")
+password = os.environ.get("TARGET_PASSWORD")
 
 cprt("header", "Starting Application." )
 cprt("okblue", "Setting up openLRW Integration." )
@@ -161,16 +163,16 @@ def get_ed_app():
 
 
 
-# print("")
-# cprt("okcyan", "creating Caliper Options and sensor")
+# # print("")
+# # cprt("okcyan", "creating Caliper Options and sensor")
 # the_config = caliper.HttpOptions(
 #     host='http://analytics.aos.nwu.ac.za/events/',
 #     auth_scheme='Bearer',
 #     api_key= jwt )
 
 
-# # Here you build your sensor; it will have one client in its registry,
-# # with the key 'default'.
+# # # Here you build your sensor; it will have one client in its registry,
+# # # with the key 'default'.
 # the_sensor = caliper.build_simple_sensor(
 #     sensor_id = 'http://analytics.aos.nwu.ac.za/sensor',
 #     config_options = the_config )
