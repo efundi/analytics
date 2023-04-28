@@ -1,5 +1,8 @@
 from collections import defaultdict
-import MySQLdb, sys, os, datetime, json, copy, requests
+import pymysql
+pymysql.install_as_MySQLdb()
+import MySQLdb
+import sys, os, datetime, json, copy, requests
 from datetime import timedelta
 import smtplib
 from email.mime.text import MIMEText
