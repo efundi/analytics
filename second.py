@@ -436,7 +436,7 @@ def create_session_events(data_packet):
   print("")
   cprt("okcyan", "Capture Session Events")
   try: 
-    print(json.dumps(data_packet, indent=4))
+    # print(json.dumps(data_packet, indent=4))
     openlrw.send_caliper(data_packet)
     cprt("okgreen", "Great Success")
   except BadRequestException as e:

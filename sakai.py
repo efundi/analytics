@@ -91,10 +91,10 @@ def format_session_events(event):
 	actor_obj  = actor
 	actor_obj["id"] = event["eid"]
 	session_obj["actor"] = actor
-	if event["EVENT"] == "user.login":
-		session_obj["action"] = CALIPER_ACTIONS["LOGGED_IN"]
-	elif event["EVENT"] == "user.logout":
+	if event["EVENT"] == "user.logout":
 		session_obj["action"] = CALIPER_ACTIONS["LOGGED_OUT"]
+	elif event["EVENT"] == "user.login" or event["EVENT"] == "user.login.container" or  event["EVENT"] == "user.login.ws":
+		session_obj["action"] = CALIPER_ACTIONS["LOGGED_IN"]
 	obj = {}
 	obj["id"] = target_system
 	obj["type"] = target_type 
