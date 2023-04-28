@@ -3,3 +3,12 @@ mysql-connector-python==8.0.27
 sshtunnel==0.4.0
 rich==10.12.0
 mysqlclient==2.0.3
+mysql-connector-python==8.0.27
+cryptography<30.0.1
+paramiko
+requests
+python_dotenv==0.19.1
+rich==10.12.0
+caliper==0.0.23
+openlrw==1.1.0
+IMSGlobal-Caliper==1.2.0.5
