@@ -146,17 +146,17 @@ def get_ed_app():
   print("---------------------")
   return ed_app
 
-def get_users():
-  # print(jwt)
-  cprt("UNDERLINE", "\nGetting users from the DB" )
-  try: 
-    users = openlrw.get_users(jwt) # All the users
-    for user in users:
-      print("User ID: %s" % (user))
-    cprt("okgreen", "Succeeded!")
-  except ExpiredTokenException:
-    cprt("FAIL", "Failed to Get the requested information from DB" )
-    OpenLRW.pretty_error("Error", "JWT Expired")
+# def get_users():
+#   # print(jwt)
+#   cprt("UNDERLINE", "\nGetting users from the DB" )
+#   try: 
+#     users = openlrw.get_users(jwt) # All the users
+#     for user in users:
+#       print("User ID: %s" % (user))
+#     cprt("okgreen", "Succeeded!")
+#   except ExpiredTokenException:
+#     cprt("FAIL", "Failed to Get the requested information from DB" )
+#     OpenLRW.pretty_error("Error", "JWT Expired")
 
 
 
