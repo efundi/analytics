@@ -3,7 +3,8 @@ import pytz
 import uuid
 import json
 from datetime import *
-from caliper.constants import *
+# from caliper.constants import *
+from cal_constants import *
 
 dt = datetime.now()
 the_config = caliper.HttpOptions(

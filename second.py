@@ -3,7 +3,8 @@ import pytz
 import uuid
 import json
 from datetime import *
-from caliper.constants import *
+# from caliper.constants import *
+from cal_constants import *
 from openlrw.client import OpenLRW
 from openlrw.exceptions import *
 import requests
