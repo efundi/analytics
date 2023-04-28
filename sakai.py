@@ -9,7 +9,8 @@ from email.mime.text import MIMEText
 # from sshtunnel import SSHTunnelForwarder
 import unicodedata
 import os 
-from caliper.constants import *
+# from caliper.constants import *
+from cal_constants import *
 from mysql_db_connector import *
 from second import display_session_packet, create_session_events
 from rich import print, inspect
