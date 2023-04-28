@@ -161,19 +161,19 @@ def get_ed_app():
 
 
 
-print("")
-cprt("okcyan", "creating Caliper Options and sensor")
-the_config = caliper.HttpOptions(
-    host='http://analytics.aos.nwu.ac.za/events/',
-    auth_scheme='Bearer',
-    api_key= jwt )
+# print("")
+# cprt("okcyan", "creating Caliper Options and sensor")
+# the_config = caliper.HttpOptions(
+#     host='http://analytics.aos.nwu.ac.za/events/',
+#     auth_scheme='Bearer',
+#     api_key= jwt )
 
 
-# Here you build your sensor; it will have one client in its registry,
-# with the key 'default'.
-the_sensor = caliper.build_simple_sensor(
-    sensor_id = 'http://analytics.aos.nwu.ac.za/sensor',
-    config_options = the_config )
+# # Here you build your sensor; it will have one client in its registry,
+# # with the key 'default'.
+# the_sensor = caliper.build_simple_sensor(
+#     sensor_id = 'http://analytics.aos.nwu.ac.za/sensor',
+#     config_options = the_config )
 
 # Create an event
 def create_navigation_event():
