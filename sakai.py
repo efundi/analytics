@@ -29,10 +29,22 @@ target_sakai_version = os.environ.get("target_sakai_version")
 """
 Retrieve information from Sakai
 """
-yesterday = datetime.datetime.today() - timedelta(days=1)
+yesterday = datetime.datetime.now() - timedelta(days=1)
 # yesterday = datetime.datetime.today()
-yesterday_start_date = yesterday.strftime('%Y-%m-%d') + " 00:00:00"
-yesterday_end_date = yesterday.strftime('%Y-%m-%d') + " 23:59:59"
+start_time = " 00:00:00"
+end_time = " 23:59:59"
+hour_block = 12
+if yesterday.hour < hour_block:
+    start_time = " 00:00:00"
+    end_time = " 11:59:59"
+else:
+    start_time = " 12:00:00"
+    end_time = " 23:59:59"
+	
+yesterday_start_date = yesterday.strftime('%Y-%m-%d') + start_time
+yesterday_end_date = yesterday.strftime('%Y-%m-%d') + end_time
+
+
 context_1 = "http://purl.imsglobal.org/ctx/caliper/v1p1"
 context_2 = "http://purl.imsglobal.org/ctx/caliper/v1p2"
 target_system = "https://%s" % ( target_sakai_url )
