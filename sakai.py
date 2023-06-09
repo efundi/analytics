@@ -24,7 +24,7 @@ logging.basicConfig(filename='app.log', filemode='a', format='%(name)s - %(ascti
 logger = logging.getLogger(__name__)
 logger.info('')
 logger.info('====================================')
-logger.info('= Start of App                     =')
+logger.info('= Start of App                      =')
 logger.info('====================================')
 logger.info('Retrieving environment parameters')
 
@@ -47,7 +47,7 @@ start_time = " 00:00:00"
 end_time = " 23:59:59"
 # hour_block = 12
 logger.info('Hour Block Size : %s' % ( hour_block ))
-if yesterday.hour < hour_block:
+if yesterday.hour < int(hour_block):
     start_time = " 00:00:00"
     end_time = " 11:59:59"
 else:
