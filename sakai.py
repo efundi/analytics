@@ -49,10 +49,10 @@ end_time = " 23:59:59"
 logger.info('Hour Block Size : %s' % ( hour_block ))
 if yesterday.hour < int(hour_block):
     start_time = " 00:00:00"
-    end_time = " 11:59:59"
+    end_time = " 00:59:59"
 else:
-    start_time = " 12:00:00"
-    end_time = " 23:59:59"
+    start_time = " 00:00:00"
+    end_time = " 00:59:59"
 	
 yesterday_start_date = yesterday.strftime('%Y-%m-%d') + start_time
 yesterday_end_date = yesterday.strftime('%Y-%m-%d') + end_time
