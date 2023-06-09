@@ -11,7 +11,10 @@ import unicodedata
 import os 
 from sakai import *
 from dotenv import load_dotenv
+import logging
 
+logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(asctime)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
+logger = logging.getLogger(__name__)
 load_dotenv()
 
 database_uri = os.environ.get("DATABASE_URI")
@@ -60,15 +63,21 @@ pip install -r requirements.txt
 
 def process_sakai_queries():
     print("----------------------------")
+    logger.info('Openning Connection to the Sakai Database')
     db = MySQLdb.connect(host=database_uri,
         user=database_username,
         passwd=database_password,
         db=database_name,
         port=database_port)
+    logger.info('Processing Sessions Start')
     process_sessions(db)
+    logger.info('Processing Sessions Completed')
+    logger.info('Processing Views Start')
     process_views(db)
+    logger.info('Processing Views Completed')
 	# process_tool_use(db)
     db.close()
+    logger.info('Closing Connection to the Sakai Database')
 	# tunnel = db_server["ssh_details"]
 	# db  = None
 	# # print(tunnel)

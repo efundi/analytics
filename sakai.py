@@ -18,6 +18,15 @@ from rich.console import Console
 from rich.table import Table
 from rich.progress import track
 from dotenv import load_dotenv
+import logging, pickle
+
+logging.basicConfig(filename='app.log', filemode='a', format='%(name)s - %(asctime)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
+logger = logging.getLogger(__name__)
+logger.info('')
+logger.info('====================================')
+logger.info('= Start of App                     =')
+logger.info('====================================')
+logger.info('Retrieving environment parameters')
 
 load_dotenv()
 
@@ -26,14 +35,18 @@ username = os.environ.get("open_lrw_username")
 password = os.environ.get("open_lrw_password")
 target_sakai_url = os.environ.get("target_sakai_url")
 target_sakai_version = os.environ.get("target_sakai_version")
+batch_size = os.environ.get("BATCH_SIZE", 1000)
+hour_block = os.environ.get("HOUR_BLOCK", 12)
 """
 Retrieve information from Sakai
 """
+logger.info('Configurating parameters for the scale and scope of data collection')
 yesterday = datetime.datetime.now() - timedelta(days=1)
 # yesterday = datetime.datetime.today()
 start_time = " 00:00:00"
 end_time = " 23:59:59"
-hour_block = 12
+# hour_block = 12
+logger.info('Hour Block Size : %s' % ( hour_block ))
 if yesterday.hour < hour_block:
     start_time = " 00:00:00"
     end_time = " 11:59:59"
@@ -44,7 +57,7 @@ else:
 yesterday_start_date = yesterday.strftime('%Y-%m-%d') + start_time
 yesterday_end_date = yesterday.strftime('%Y-%m-%d') + end_time
 
-
+logger.info('Preparing Caliper configurations')
 context_1 = "http://purl.imsglobal.org/ctx/caliper/v1p1"
 context_2 = "http://purl.imsglobal.org/ctx/caliper/v1p2"
 target_system = "https://%s" % ( target_sakai_url )
@@ -58,6 +71,7 @@ edApp = {
 actor = {"id" : "", "type": ENTITY_TYPES["PERSON"] }	
 
 def process_sessions(db):
+	logger.info('Beggining to process the session related data and profiles.')
 	"""
 	Get all events between a specific range with a specific type.
 	In this instance it will be Session LoggedIn, LoggedOut, TimeOut
@@ -77,18 +91,24 @@ def process_sessions(db):
 	# print all the first cell of all the rows
 	session_events = cur.fetchall()
 	print("Total Events: %s" % (len(session_events)))
+	logger.info("Total Events to be processed: %s" % (len(session_events)))
 	packet = {}
 	packet["data"] = []
 	if len(session_events) > 0:
+		rowcnt = 0
 		for row in session_events:
+			rowcnt = rowcnt + 1
 			# print(row)
+			logger.info("Processing row: %s / %s" % (rowcnt, len(session_events)))
 			packet["data"].append(format_session_events(row))
+			logger.info("Size of packet: %s " % ( len(packet["data"]) ))
 		packet["sensor"] = "string"
 		packet["sendTime"] = datetime.datetime.now(tz=pytz.UTC).isoformat()[:23] + 'Z'
 
 		print("Total Session events: %s" % (len(packet["data"])))
 
 		# print(json.dumps(packet, indent=4))
+
 		create_session_events(packet)
 	else:
 		print("No Events: no further action required")
@@ -242,6 +262,7 @@ def process_tool_use(db):
     print("[bold blue]Processing Tool Use[/bold blue]")
 
 if __name__ == "__main__":
+	logger.info('Beginning data retrieval and transformation.')
 	print("[bold blue]Displaying Session Packet[/bold blue]")
 	print(display_session_packet())
 	process_sakai_queries()
