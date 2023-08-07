@@ -10,6 +10,10 @@ from openlrw.exceptions import *
 import requests
 import json, os, sys
 from dotenv import load_dotenv
+import logging, pickle
+
+logging.basicConfig(filename='app.log', filemode='a', format='%(name)s - %(asctime)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
@@ -442,10 +446,13 @@ def create_session_events(data_packet):
   except BadRequestException as e:
     print(str(e))
     print("An Error Occurred")
+    logger.error(str(e.message))
+    logger.error(json.dumps(data_packet, indent=4))
     # openlrw.pretty_error("Bad Request", "An error happened.")
   except InternalServerErrorException as f:
     print(str(f.message)) 
-
+    logger.error(str(f.message))
+    logger.error(json.dumps(data_packet, indent=4))
 
 def display_session_packet():
     data = open( "profile_data/session_event_envelope.json", 'r')

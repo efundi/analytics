@@ -92,24 +92,22 @@ def process_sessions(db):
 	session_events = cur.fetchall()
 	print("Total Events: %s" % (len(session_events)))
 	logger.info("Total Events to be processed: %s" % (len(session_events)))
-	packet = {}
-	packet["data"] = []
 	if len(session_events) > 0:
 		rowcnt = 0
 		for row in session_events:
 			rowcnt = rowcnt + 1
 			# print(row)
 			logger.info("Processing row: %s / %s" % (rowcnt, len(session_events)))
+			packet = {}
+			packet["data"] = []
 			packet["data"].append(format_session_events(row))
-			logger.info("Size of packet: %s " % ( len(packet["data"]) ))
-		packet["sensor"] = "string"
-		packet["sendTime"] = datetime.datetime.now(tz=pytz.UTC).isoformat()[:23] + 'Z'
-
-		print("Total Session events: %s" % (len(packet["data"])))
-
+			packet["sensor"] = "string"
+			packet["sendTime"] = datetime.datetime.now(tz=pytz.UTC).isoformat()[:23] + 'Z'
+			create_session_events(packet)
+			# logger.info("Size of packet: %s " % ( len(packet["data"]) ))
+		print("Total Session events: %s" % (rowcnt))
+		logger.info("Completed processing sessions: %s / %s" % (rowcnt, len(session_events)))
 		# print(json.dumps(packet, indent=4))
-
-		create_session_events(packet)
 	else:
 		print("No Events: no further action required")
 	cur.close()
