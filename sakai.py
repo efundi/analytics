@@ -96,7 +96,7 @@ def process_sessions(db):
 		rowcnt = 0
 		for row in session_events:
 			rowcnt = rowcnt + 1
-			# print(row)
+			print(row)
 			logger.info("Processing row: %s / %s" % (rowcnt, len(session_events)))
 			packet = {}
 			packet["data"] = []
