@@ -103,6 +103,7 @@ def process_sessions(db):
 			packet["data"].append(format_session_events(row))
 			packet["sensor"] = "string"
 			packet["sendTime"] = datetime.datetime.now(tz=pytz.UTC).isoformat()[:23] + 'Z'
+			print(json.dumps(packet, indent=4))
 			create_session_events(packet)
 			# logger.info("Size of packet: %s " % ( len(packet["data"]) ))
 		print("Total Session events: %s" % (rowcnt))
