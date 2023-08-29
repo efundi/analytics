@@ -69,8 +69,9 @@ def process_sakai_queries():
         passwd=database_password,
         db=database_name,
         port=database_port)
-    # logger.info('Processing Sessions Start')
-    # process_sessions(db)
+    
+    logger.info('Processing Sessions Start')
+    process_sessions(db)
     logger.info('Processing Sessions Completed')
     logger.info('Processing Views Start')
     process_views(db)
